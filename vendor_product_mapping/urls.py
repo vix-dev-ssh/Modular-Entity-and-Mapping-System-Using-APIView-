@@ -1,0 +1,11 @@
+from django.urls import path
+
+from vendor_product_mapping.views import (
+    VendorProductMappingDetailAPIView,
+    VendorProductMappingListCreateAPIView,
+)
+
+urlpatterns = [
+    path("", VendorProductMappingListCreateAPIView.as_view(), name="vendor-product-mapping-list-create"),
+    path("<int:pk>/", VendorProductMappingDetailAPIView.as_view(), name="vendor-product-mapping-detail"),
+]
